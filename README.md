@@ -47,5 +47,3 @@ I appreciate any contributions or suggestions to enhance this portfolio website.
 Thank you for visiting my portfolio website repository. I hope you find it useful and inspiring for building your own portfolio website. If you have any questions or feedback, please don't hesitate to reach out.
 
 
-https://user-images.githubusercontent.com/104623869/211145102-0039f3e2-721e-4a60-ba77-12b0c223ce35.mp4
-
