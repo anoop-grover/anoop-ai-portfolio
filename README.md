@@ -11,7 +11,7 @@ Below You can watch the demo video of my portfolio website.
 
 To view the live version of my portfolio website, click the link below:
 
-[My Portfolio Website](https://my-portfolio-website-three-delta.vercel.app/)
+[My Portfolio Website](https://anoop-grover.github.io/anoop-ai-portfolio/)
 
 Feel free to explore the different sections of the website, including:
 
@@ -32,7 +32,7 @@ The portfolio website is built using the following technologies:
 
 If you would like to use this portfolio website as a template for your own portfolio, follow the steps below:
 
-1. Clone the repository: `git clone https://github.com/hanishtharwani123/MY-PORTFOLIO-WEBSITE.git`
+1. Clone the repository: `git clone https://github.com/anoop-grover/anoop-ai-portfolio.git`
 2. Customize the content in the HTML files to reflect your own information.
 3. Modify the CSS styles to match your desired design preferences.
 4. Add your own projects, skills, and contact details.
