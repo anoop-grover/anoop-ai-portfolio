@@ -911,6 +911,66 @@ textarea::placeholder {
     box-shadow: 0 0 19px #ff00e3;
 }
 
+/******************** CERTIFICATIONS SECTION ********************/
+
+#certifications{
+    padding:100px 10%;
+}
+
+.cert-title{
+    color:var(--secondary-color);
+    font-size:3vw;
+    margin-bottom:50px;
+    border-bottom:1px solid #514f4f;
+    display:inline-block;
+}
+
+.cert-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px;
+}
+
+.cert-card{
+    border:2px solid #ff00e3;
+    border-radius:10px;
+    padding:30px;
+    background:#111;
+    box-shadow:0 0 20px rgba(255,0,227,0.4);
+    transition:0.3s;
+}
+
+.cert-card:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 30px #ff00e3;
+}
+
+.cert-name{
+    color:#fff;
+    font-size:1.4rem;
+    margin-bottom:10px;
+}
+
+.cert-org{
+    color:#ff00e3;
+    font-weight:500;
+    margin-bottom:8px;
+}
+
+.cert-date{
+    color:#bbb;
+    margin-bottom:20px;
+}
+
+.cert-btn{
+    text-decoration:none;
+    color:white;
+    background:#ff00e3;
+    padding:8px 16px;
+    border-radius:5px;
+    font-size:14px;
+}
+
 
 /******************** MAKING CONTACT PAGE RESPONSIVE ********************/
 
@@ -1110,6 +1170,18 @@ box-shadow:
     .cen {
         margin-top: -98vw;
     }
+}
+
+@media(max-width:900px){
+
+.cert-grid{
+    grid-template-columns:1fr;
+}
+
+.cert-title{
+    font-size:7vw;
+}
+
 }
 
 
