@@ -7,685 +7,732 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anoop Grover - Digital Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="favicon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
-
-
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
+    <!-- ---------- Interactive AI Neural Network Canvas ---------- -->
+    <canvas id="neuralCanvas"></canvas>
 
-    <!------------ Home Section ------------->
-    <div id="header">
+    <!-- ---------- Ambient Glow Background Auras ---------- -->
+    <div class="ambient-aura aura-1"></div>
+    <div class="ambient-aura aura-2"></div>
+    <div class="ambient-aura aura-3"></div>
+
+    <!-- ---------- Navigation Header ---------- -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="#header" class="logo">Anoop Grover</a>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <ul class="nav-links">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#project">Projects</a></li>
+                <li><a href="#certifications">Certificates</a></li>
+                <li><a href="#contact-us">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <img src="images/sun.png" id="icon" alt="Theme Switcher">
+            </div>
+        </div>
+    </nav>
+
+    <!-- ---------- Floating Social Links ---------- -->
+    <div class="social-links">
+        <a href="https://github.com/anoop-grover" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/anoopgroverrr/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://x.com/anoopgroverrr" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    </div>
+
+    <!-- ---------- Home Section (Bento Grid) ---------- -->
+    <section id="header">
         <div class="container">
-            <nav class="navbar">
-                <input type="checkbox" id="check">
-                <label for="check" class="checkbtn">
-                    <i class="fas fa-bars"></i>
-                </label>
-                <h1 class="logo">Anoop Grover</h1>
-                <ul class="nav-links">
-                    <li><a class="hov1" href="#header">Home</a></li>
-                    <li><a class="hov2" href="#about">About</a></li>
-                    <li><a class="hov3" href="#skills">Skills</a></li>
-                    <li><a class="hov4" href="#project">Projects</a></li>
-                    <li><a class="hov5" href="#contact-us">Contact Me</a></li>
-                </ul>
-                <img src="images/sun.png" id="icon">
-                <div class="social-links">
-                    <a href="https://x.com/anoopgroverrr"><i class="fab fa-twitter"><span>Twitter</span></i><br></a>
-                    <a href="https://www.linkedin.com/in/anoopgroverrr/"><i
-                            class="fab fa-linkedin"><span>Linkedin</span></i><br></a>
-                    <a href="https://github.com/anoop-grover"><i class="fab fa-github"><span>Github</span></i></a>
-                </div>
-            </nav>
-            <div class="main">
-                <div class="container1">
-                    <p class="port">Welcome to my Portfolio</p>
-                    <h1 class="text">Hi I'm Anoop
-                    </h1>
-                    <h1 class="text-typ">
+            <div class="bento-grid">
+                
+                <!-- Card 1: Intro / Bio -->
+                <div class="bento-card col-span-2 intro-card reveal">
+                    <div class="port-badge">Digital Portfolio</div>
+                    <p class="text-welcome">Hi, welcome to my space</p>
+                    <h1 class="text-name">I'm <span>Anoop Grover</span></h1>
+                    <div class="text-typ">
                         <span class="auto-typed"></span>
-                    </h1>
-                    <a href="resume.pdf"><button class="btn2">My Resume</button></a>
-                    <div class="social">
+                    </div>
+                    <p class="intro-desc">
+                        A product-focused software engineer and data analyst specializing in database management, workflow automation, and building scalable full-stack web applications.
+                    </p>
+                    <div class="cta-group">
+                        <a href="resume.pdf" class="btn-primary" download><i class="fas fa-download" style="margin-right: 8px;"></i>Download Resume</a>
+                        <a href="#contact-us" class="btn-secondary">Get in Touch</a>
                     </div>
                 </div>
-                <div class="imag">
-                    <img class="anim-img" src="images/Virtual reality-cuate (2).png">
-                </div>
-            </div>
-        </div>
-    </div>
 
-
-
-    <!------------ About Section ------------->
-    <div id="about">
-        <div class="img-ai">
-            <img class="imga"
-                src="Anoop imagee.jpeg"
-                alt="">
-        </div>
-
-        <div class="text-ai">
-            <h1 class="about-us">About Me</h1>
-            <p class="para">Hello 👋, my name is Anoop Grover and I am from Jalandhar, Punjab. I am currently pursuing a
-                B.Tech in Computer Science at Lovely Professional University. I am passionate about building scalable
-                web applications and solving real-world problems through technology.<br><br>
-
-                I primarily work with React.js, Node.js, Express.js, and JavaScript, and have experience with databases
-                like MySQL and MongoDB. I have built projects such as a collaborative cloud-based IDE and an AI-powered
-                personalized learning platform.<br><br>
-
-                Along with development, I actively practice problem solving and have solved 450+ Data Structures and
-                Algorithms problems across platforms like LeetCode, GeeksforGeeks, CodeChef, and CodeForces. 🚀</p>
-        </div>
-    </div>
-
-
-
-
-
-    <!------------ Skills Section ------------->
-
-    <div id="skills">
-        <div class="box">
-
-            <h1 class="my-skills">Skills & Technologies</h1>
-
-            <!-- Languages -->
-            <h2 class="skill-category">Languages</h2>
-            <div class="grid">
-                <div class="card-1">
-                    <img class="icon-img" src="images/python.png">
-                    <p class="icon-name">Python</p>
+                <!-- Card 2: Profile Image -->
+                <div class="bento-card profile-card reveal">
+                    <div class="profile-img-container">
+                        <img class="imga" src="Anoop imagee.jpeg" alt="Anoop Grover">
+                    </div>
                 </div>
 
-                <div class="card-1">
-                    <img class="icon-img" src="images/java.png">
-                    <p class="icon-name">Java</p>
-                </div>
-
-                <div class="card-1">
-                    <img class="icon-img" src="images/cpp.png">
-                    <p class="icon-name">C++</p>
-                </div>
-
-                <div class="card-1">
-                    <img class="icon-img" src="images/javascript.png">
-                    <p class="icon-name">JavaScript</p>
-                </div>
-
-                <div class="card-1">
-                    <img class="icon-img" src="images/html.png">
-                    <p class="icon-name">HTML</p>
-                </div>
-
-                <div class="card-1">
-                    <img class="icon-img" src="images/css.png">
-                    <p class="icon-name">CSS</p>
-                </div>
-            </div>
-
-
-            <!-- Frameworks -->
-            <h2 class="skill-category">Frameworks</h2>
-            <div class="grid">
-
-                <div class="card-1">
-                    <img class="icon-img" src="images/react.png">
-                    <p class="icon-name">React.js</p>
-                </div>
-
-                <div class="card-1">
-                    <img class="icon-img" src="images/nodejs.png">
-                    <p class="icon-name">Node.js</p>
-                </div>
-
-                <div class="card-1">
-                    <img class="icon-img" src="images/express.png">
-                    <p class="icon-name">Express.js</p>
-                </div>
-
-                <div class="card-1">
-                    <img class="icon-img" src="images/redux.png">
-                    <p class="icon-name">Redux</p>
-                </div>
-
-                <div class="card-1">
-                    <img class="icon-img" src="images/springboot.png">
-                    <p class="icon-name">Spring Boot</p>
-                </div>
-
-            </div>
-
-
-            <!-- Tools -->
-            <h2 class="skill-category">Tools & Platforms</h2>
-            <div class="grid">
-
-                <div class="card-1">
-                    <img class="icon-img" src="images/mysql.png">
-                    <p class="icon-name">MySQL</p>
-                </div>
-
-                <div class="card-1">
-                    <img class="icon-img" src="images/mongo.png">
-                    <p class="icon-name">MongoDB</p>
-                </div>
-
-                <div class="card-1">
-                    <img class="icon-img" src="images/docker.png">
-                    <p class="icon-name">Docker</p>
-                </div>
-
-                <div class="card-1">
-                    <img class="icon-img" src="images/git.png">
-                    <p class="icon-name">Git</p>
-                </div>
-
-                <div class="card-1">
-                    <img class="icon-img" src="images/github.png">
-                    <p class="icon-name">GitHub</p>
-                </div>
-
-                <div class="card-1">
-                    <img class="icon-img" src="images/postman.png">
-                    <p class="icon-name">Postman</p>
-                </div>
-
-            </div>
-
-
-            <!-- Core Concepts -->
-            <h2 class="skill-category">Core Computer Science</h2>
-            <div class="grid">
-
-                <div class="card-1">
-                    <p class="icon-name">Data Structures & Algorithms</p>
-                </div>
-
-                <div class="card-1">
-                    <p class="icon-name">RESTful APIs</p>
-                </div>
-
-                <div class="card-1">
-                    <p class="icon-name">Computer Networking</p>
-                </div>
-
-            </div>
-
-
-            <!-- Soft Skills -->
-            <h2 class="skill-category">Professional Skills</h2>
-            <div class="grid">
-
-                <div class="card-1">
-                    <p class="icon-name">Problem Solving</p>
-                </div>
-
-                <div class="card-1">
-                    <p class="icon-name">Communication</p>
-                </div>
-
-                <div class="card-1">
-                    <p class="icon-name">Team Collaboration</p>
-                </div>
-
-                <div class="card-1">
-                    <p class="icon-name">Leadership</p>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-    <!------------ Projects Section ------------->
-    <div id="project">
-        <div class="box1">
-            <p class="my-project">My Projects</p>
-
-
-            <div class="grid-project">
-                <div class="card-2">
-                    <div class="word">
-                        <img class="project-img" src="images/Screenshot 2023-10-31 183116.png" alt="">
-                        <div class="layer">
-                            <p class="about-project"> I have created a new website called Mental Harbor using Next JS.
-                                if any person has any problem related to mental health, then he can easily go to this
-                                website and find the solution to the problem. </p>
-                            <!-- <a class="link-site" href="https://mental-harbor.vercel.app/"><i
-                                    class="fas fa-external-link-alt"></i></a> -->
+                <!-- Card 3: Interactive AI Assistant / Terminal Card -->
+                <div class="bento-card col-span-2 ai-card reveal" id="chatCard">
+                    <!-- Chatbot Interface View -->
+                    <div id="chatbotView" class="view-panel active">
+                        <div class="ai-header">
+                            <div class="ai-user-info">
+                                <div class="ai-avatar"><i class="fas fa-robot"></i></div>
+                                <div>
+                                    <div class="ai-title">Anoop's Assistant</div>
+                                    <div class="ai-status">Online & Ready</div>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 8px; align-items: center;">
+                                <button id="chatVolumeBtn" class="preset-btn" onclick="toggleVolume()" style="padding: 6px 10px; margin: 0; font-size: 14px;"><i class="fas fa-volume-up"></i></button>
+                                <button class="preset-btn" onclick="toggleTerminalMode()" style="padding: 6px 12px; margin: 0; display: inline-flex; align-items: center; gap: 6px;"><i class="fas fa-terminal"></i> Terminal Mode</button>
+                            </div>
+                        </div>
+                        
+                        <div class="chat-container-split">
+                            <!-- Left Column: Chat Dialogue -->
+                            <div class="chat-main">
+                                <div class="ai-body" id="chatBody">
+                                    <div class="chat-msg bot">
+                                        Hi there! I am Anoop's virtual assistant. Ask me anything about his skills, projects, certifications, or how to contact him!
+                                        <br><br>
+                                        <em>Tip: You can speak to me by clicking the microphone, or type <strong>/terminal</strong> to switch to shell mode!</em>
+                                    </div>
+                                </div>
+                                <div class="ai-presets" id="chatPresets">
+                                    <button class="preset-btn" onclick="sendPreset('Tell me about Anoop\'s PM and strategy skills')">PM & Strategy</button>
+                                    <button class="preset-btn" onclick="sendPreset('Do you know SQL & Data Operations?')">SQL & Data</button>
+                                    <button class="preset-btn" onclick="sendPreset('What projects has Anoop built?')">Show Projects</button>
+                                    <button class="preset-btn" onclick="sendPreset('How do I contact Anoop?')">Contact Info</button>
+                                </div>
+                                <div class="ai-input-area">
+                                    <input type="text" id="chatInput" class="ai-input" placeholder="Type a message or click a preset..." onkeydown="if(event.key === 'Enter') sendMessage()">
+                                    <button id="chatMicBtn" class="ai-send-btn mic-btn" onclick="toggleVoiceInput()"><i class="fas fa-microphone"></i></button>
+                                    <button id="chatSendBtn" class="ai-send-btn" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+                                </div>
+                            </div>
+                            
+                            <!-- Right Column: AI Diagnostics -->
+                            <div class="chat-diagnostics">
+                                <div class="diag-header"><i class="fas fa-chart-line"></i> AI Diagnostics</div>
+                                
+                                <div class="diag-item">
+                                    <div class="diag-label">Input Intent / Sentiment:</div>
+                                    <div class="diag-value" id="diagSentiment">Neutral</div>
+                                </div>
+                                
+                                <div class="diag-item">
+                                    <div class="diag-label">Anoop Skill Match Rate:</div>
+                                    <div class="diag-bar-container">
+                                        <div class="diag-bar" id="diagMatchBar" style="width: 0%;"></div>
+                                    </div>
+                                    <div class="diag-value" id="diagMatchText">0%</div>
+                                </div>
+                                
+                                <div class="diag-item">
+                                    <div class="diag-label">Model Engine:</div>
+                                    <div class="diag-value font-mono">Gemini-3.5-Flash</div>
+                                </div>
+                                
+                                <div class="diag-item">
+                                    <div class="diag-label">Response Latency:</div>
+                                    <div class="diag-value font-mono" id="diagLatency">0ms</div>
+                                </div>
+                                
+                                <div class="diag-item">
+                                    <div class="diag-label">Processing Status:</div>
+                                    <div class="diag-value status-online" id="diagStatus">Idle</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="link-btn">
-                        <p class="project-name">MentalHarbor</p>
-                        <!-- <a href="https://github.com/hanishtharwani123/MentalHarbor"><button class="btn-git">Source
-                                Code</button></a> -->
+                    <!-- Retro Developer Terminal View -->
+                    <div id="terminalView" class="view-panel">
+                        <canvas id="matrixCanvas"></canvas>
+                        <div class="ai-header" style="position: relative; z-index: 10;">
+                            <div class="ai-user-info">
+                                <div class="ai-avatar" style="background: rgba(34, 197, 94, 0.2); color: #22c55e; border: 1px solid #22c55e;"><i class="fas fa-terminal"></i></div>
+                                <div>
+                                    <div class="ai-title" style="color: #22c55e; font-family: var(--font-mono);">developer@anoop-shell:~$</div>
+                                    <div class="ai-status" style="color: #22c55e; font-family: var(--font-mono);"><span style="background-color: #22c55e; width: 6px; height: 6px; border-radius: 50%; display: inline-block; animation: blink 1s infinite; margin-right: 4px;"></span>Active Shell</div>
+                                </div>
+                            </div>
+                            <button class="preset-btn" onclick="toggleTerminalMode()" style="padding: 6px 12px; margin: 0; background: rgba(34, 197, 94, 0.1); border-color: #22c55e; color: #22c55e; font-family: var(--font-mono); display: inline-flex; align-items: center; gap: 6px;">
+                                <i class="fas fa-comments"></i> Chat Mode
+                            </button>
+                        </div>
+                        <div class="terminal-body" id="terminalBody">
+                            <div class="terminal-line system">Welcome to Anoop-Shell v1.0.0. Connection established.</div>
+                            <div class="terminal-line system">Type 'help' to view all available commands.</div>
+                        </div>
+                        <div class="terminal-input-line">
+                            <span class="terminal-prompt">visitor@anoop-portfolio:~$</span>
+                            <input type="text" id="terminalInput" class="terminal-input" onkeydown="handleTerminalCommand(event)" autocomplete="off">
+                        </div>
                     </div>
                 </div>
 
-                <div class="card-2">
-                    <div class="word">
-                        <img class="project-img" src="images/Screenshot 2023-11-14 174910.png" alt="">
-                        <div class="layer">
-                            <p class="about-project"> Quick Talk is a real-time chat application built with React.js and
-                                Firebase. Users can sign up, enter a room, and engage in real-time conversations with
-                                other users in the same room. </p>
-                            <!-- <a class="link-site" href="https://quick-talk-chat-app.vercel.app/"><i
-                                    class="fas fa-external-link-alt"></i></a> -->
+                <!-- Card 4: LeetCode / DSA Stats Dashboard -->
+                <div class="bento-card stats-card reveal">
+                    <div class="stats-title">
+                        <i class="fas fa-code"></i> DSA Problem Solving
+                    </div>
+                    
+                    <!-- Advanced SVG progress tracker grid -->
+                    <div class="dsa-svg-tracker">
+                        <div class="dsa-circle-item">
+                            <svg class="progress-ring" width="80" height="80">
+                                <circle class="progress-ring__background" stroke="var(--border-color)" stroke-width="6" fill="transparent" r="32" cx="40" cy="40"/>
+                                <circle class="progress-ring__circle easy" stroke="#10b981" stroke-width="6" fill="transparent" r="32" cx="40" cy="40"/>
+                            </svg>
+                            <div class="dsa-circle-text">
+                                <span class="dsa-circle-count easy-count">180</span>
+                                <span class="dsa-circle-label">Easy</span>
+                            </div>
+                        </div>
+
+                        <div class="dsa-circle-item">
+                            <svg class="progress-ring" width="80" height="80">
+                                <circle class="progress-ring__background" stroke="var(--border-color)" stroke-width="6" fill="transparent" r="32" cx="40" cy="40"/>
+                                <circle class="progress-ring__circle medium" stroke="#f59e0b" stroke-width="6" fill="transparent" r="32" cx="40" cy="40"/>
+                            </svg>
+                            <div class="dsa-circle-text">
+                                <span class="dsa-circle-count medium-count">220</span>
+                                <span class="dsa-circle-label">Medium</span>
+                            </div>
+                        </div>
+
+                        <div class="dsa-circle-item">
+                            <svg class="progress-ring" width="80" height="80">
+                                <circle class="progress-ring__background" stroke="var(--border-color)" stroke-width="6" fill="transparent" r="32" cx="40" cy="40"/>
+                                <circle class="progress-ring__circle hard" stroke="#ef4444" stroke-width="6" fill="transparent" r="32" cx="40" cy="40"/>
+                            </svg>
+                            <div class="dsa-circle-text">
+                                <span class="dsa-circle-count hard-count">50</span>
+                                <span class="dsa-circle-label">Hard</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="link-btn">
-                        <p class="project-name">QuickTalk</p>
-                        <!-- <a href="https://github.com/hanishtharwani123/QuickTalk_ChatApp"><button class="btn-git">Source
-                                Code</button></a> -->
+                    <div class="dsa-summary-bar">
+                        <div class="dsa-summary-label">Total Solved:</div>
+                        <div class="dsa-summary-val" id="totalSolvedCount">450+</div>
                     </div>
-                </div>
 
-                <div class="card-2">
-                    <div class="word">
-                        <img class="project-img" src="images/Screenshot 2023-11-03 191117.png" alt="">
-                        <div class="layer">
-                            <p class="about-project"> PicoMart is an e-commerce website where you can explore and shop
-                                for a wide range of products. It allows you to filter products by category and sort them
-                                by price </p>
-                            <!-- <a class="link-site" href="https://pico-mart.vercel.app/"><i
-                                    class="fas fa-external-link-alt"></i></a> -->
+                    <div class="stats-grid" style="margin-top: 10px;">
+                        <div class="stat-box" style="padding: 10px;">
+                            <div class="stat-number" id="leetcodeRatingVal">1615</div>
+                            <div class="stat-label">LeetCode Rating</div>
+                        </div>
+                        <div class="stat-box" style="padding: 10px;">
+                            <div class="stat-number">Top 20%</div>
+                            <div class="stat-label">LeetCode Global</div>
                         </div>
                     </div>
-
-                    <div class="link-btn">
-                        <p class="project-name">PicoMart</p>
-                        <!-- <a href="https://github.com/hanishtharwani123/PicoMart"><button class="btn-git">Source
-                                Code</button></a> -->
-                    </div>
-                </div>
-
-                <div class="card-2">
-                    <div class="word">
-                        <img class="project-img" src="images/Screenshot (907).png" alt="">
-                        <div class="layer">
-                            <p class="about-project">We all know how
-                                dangerous climate change is for the world at this time. That's why I created this
-                                project so that we can try to stop climate change at individual level by calculating
-                                carbon footprint.</p>
-                            <!-- <a class="link-site" href="https://climate-cure.vercel.app/"><i
-                                    class="fas fa-external-link-alt"></i></a> -->
-                        </div>
-                    </div>
-
-                    <div class="link-btn">
-                        <p class="project-name">ClimateCure</p>
-                        <!-- <a href="https://github.com/hanishtharwani123/ClimateCure"><button class="btn-git">Source
-                                Code</button></a> -->
-                    </div>
-                </div>
-
-                <div class="card-2">
-                    <div class="word">
-                        <img class="project-img" src="images/snaply.png" alt="">
-                        <div class="layer">
-                            <p class="about-project"> I have created a this project called snaply which is a social
-                                media platform where you can post anything text or image. This project is fully
-                                responsive.</p>
-                            <!-- <a class="link-site" href="https://snaply-ten.vercel.app/"><i
-                                    class="fas fa-external-link-alt"></i></a> -->
-                        </div>
-                    </div>
-
-                    <div class="link-btn">
-                        <p class="project-name">Snaply</p>
-                        <!-- <a href="https://github.com/hanishtharwani123/Snaply"><button class="btn-git">Source
-                                Code</button></a> -->
-                    </div>
-                </div>
-
-                <div class="card-2">
-                    <div class="word">
-                        <img class="project-img" src="images/share.png" alt="">
-                        <div class="layer">
-                            <p class="about-project"> i have created this project called shareshot. Which is a social
-                                media website on which you can post something, apart from this you can also put caption
-                                on the post. This project is fully responsive.</p>
-                            <!-- <a class="link-site" href="https://share-shot-social-media-website.vercel.app/"><i
-                                    class="fas fa-external-link-alt"></i></a> -->
-                        </div>
-                    </div>
-
-                    <div class="link-btn">
-                        <p class="project-name">ShareShot</p>
-                        <!-- <a href="https://github.com/hanishtharwani123/ShareShot---socialMediaWebsite"><button
-                                class="btn-git">Source
-                                Code</button></a> -->
-                    </div>
-                </div>
-
-                <div class="card-2">
-                    <div class="word">
-                        <img class="project-img" src="images/movie.png" alt="">
-                        <div class="layer">
-                            <p class="about-project">I have created this project called "moviemaniax" , which is a movie
-                                trailer website, on which you will be able to watch trailers of some selected movies.
-                                This project is fully responsive.</p>
-                            <!-- <a class="link-site" href="https://movie-maniax-movie-trailer-website.vercel.app/"><i
-                                    class="fas fa-external-link-alt"></i></a> -->
-                        </div>
-                    </div>
-
-                    <div class="link-btn">
-                        <p class="project-name">MovieManiax</p>
-                        <!-- <a href="https://github.com/hanishtharwani123/MovieManiax---movie-trailer-website"><button
-                                class="btn-git">Source
-                                Code</button></a> -->
-                    </div>
-                </div>
-
-                <div class="card-2">
-                    <div class="word">
-                        <img class="project-img" src="images/melocast.png" alt="">
-                        <div class="layer">
-                            <p class="about-project"> I have created a music streaming website called Melocast. I have
-                                created this website without using api. In this website you can listen to some selected
-                                songs.</p>
-                            <!-- <a class="link-site" href="https://melocast-music-website.vercel.app/"><i
-                                    class="fas fa-external-link-alt"></i></a> -->
-                        </div>
-                    </div>
-
-                    <div class="link-btn">
-                        <p class="project-name">Melocast</p>
-                        <!-- <a href="https://github.com/hanishtharwani123/MELOCAST-music-website"><button
-                                class="btn-git">Source
-                                Code</button></a> -->
-                    </div>
-                </div>
-
-                <div class="card-2">
-                    <div class="word">
-                        <img class="project-img" src="images/gpa.png" alt="">
-                        <div class="layer">
-                            <p class="about-project">I have created GradeGaze, which is gpa and cgpa calculator. I have
-                                created this project using HTML, CSS and Javascript. And if you are from vit college
-                                then you can easily calculate your gpa and cgpa</p>
-                            <!-- <a class="link-site"
-                                href="https://gpa-cgpa-calculator-ltkkxzlwz-hanishtharwani123.vercel.app/"><i
-                                    class="fas fa-external-link-alt"></i></a> -->
-                        </div>
-                    </div>
-
-                    <div class="link-btn">
-                        <p class="project-name">GradeGaze</p>
-                        <!-- <a href="https://github.com/hanishtharwani123/GPA-CGPA-Calculator"><button
-                                class="btn-git">Source
-                                Code</button></a> -->
-                    </div>
-                </div>
-
-                <div class="card-2">
-                    <div class="word">
-                        <img class="project-img" src="images/netflix.png" alt="">
-                        <div class="layer">
-                            <p class="about-project">This project is a clone which is based on Netflix. I have created
-                                this project using pure html css and have used javascript on sign up page.</p>
-                            <!-- <a class="link-site" href="https://rad-sunflower-c21100.netlify.app/"><i
-                                    class="fas fa-external-link-alt"></i></a> -->
-                        </div>
-                    </div>
-
-                    <div class="link-btn">
-                        <p class="project-name">Netflix-clone</p>
-                        <!-- <a href="https://github.com/hanishtharwani123/Netflix-clone"><button class="btn-git">Source
-                                Code</button></a> -->
-                    </div>
-                </div>
-                <div class="card-2">
-
-                    <div class="word">
-                        <img class="project-img" src="images/Screenshot (732).png" alt="">
-                        <div class="layer">
-                            <p class="about-project">This is a travel adventure website. I have created this beautiful
-                                Responsive travel website using HTML and CSS I hope you liked it</p>
-                            <!-- <a class="link-site" href="https://adventure-travel-website.vercel.app/"><i
-                                    class="fas fa-external-link-alt"></i></a> -->
-                        </div>
-                    </div>
-                    <div class="link-btn">
-                        <p class="project-name">Adventure website</p>
-                        <!-- <a href="https://github.com/hanishtharwani123/ADVENTURE-TRAVEL-WEBSITE"><button
-                                class="btn-git">Source
-                                Code</button></a> -->
-                    </div>
-                </div>
-                <div class="card-2">
-                    <div class="word">
-                        <img class="project-img" src="images/Screenshot (733).png" alt="">
-                        <div class="layer">
-                            <p class="about-project">This is a REDWHITE restaurent website. I have created this
-                                beautiful Responsive restaurent website using HTML and CSS I hope you liked it</p>
-                            <!-- <a class="link-site" href="https://red-white-website.vercel.app/"><i
-                                    class="fas fa-external-link-alt"></i></a> -->
-                        </div>
-                    </div>
-
-                    <div class="link-btn">
-                        <p class="project-name">REDWHITE website</p>
-                        <!-- <a href="https://github.com/hanishtharwani123/RED-WHITE-WEBSITE"><button class="btn-git">Source
-                                Code</button></a> -->
-                    </div>
-                </div>
-                <div class="card-2">
-                    <div class="word">
-                        <img class="project-img" src="images/todolist.png" alt="">
-                        <div class="layer">
-                            <p class="about-project"> I have created this project by using HTML, CSS and Javascript.
-                                Concepts of JavaScript such as event listeners, query selectors, loops and functions
-                                have been used in this project</p>
-                            <!-- <a class="link-site" href="https://elaborate-druid-6690a9.netlify.app/"><i
-                                    class="fas fa-external-link-alt"></i></a> -->
-                        </div>
-                    </div>
-
-                    <div class="link-btn">
-                        <p class="project-name">To Do List</p>
-                        <!-- <a href="https://github.com/hanishtharwani123/To-Do-list-Project"><button class="btn-git">Source
-                                Code</button></a> -->
-                    </div>
-                </div>
-
-                <div class="card-2">
-                    <div class="word">
-                        <img class="project-img" src="images/weather.png" alt="">
-                        <div class="layer">
-                            <p class="about-project">I have created this project using HTML, CSS and Javascript. In this
-                                project we have used API for Weather details.</p>
-                            <!-- <a class="link-site" href="https://github.com/hanishtharwani123/RED-WHITE-WEBSITEi
-                                    class=" fas fa-external-link-alt"></i></a> -->
-                        </div>
-                    </div>
-
-                    <div class="link-btn">
-                        <p class="project-name">Weather App</p>
-                        <!-- <a href="https://github.com/hanishtharwani123/Weather-App"><button class="btn-git">Source
-                                Code</button></a> -->
-                    </div>
-                </div>
-                <div class="card-2">
-                    <div class="word">
-                        <img class="project-img" src="images/form.png" alt="">
-                        <div class="layer">
-                            <p class="about-project">I have created this project with the help of HTML, CSS and
-                                Javascript. I have created this sign in page using JavaScript concepts like event
-                                listeners and loops. I hope you like it.</p>
-                            <!-- <a class="link-site" href="https://effervescent-liger-867ff0.netlify.app/"><i
-                                    class="fas fa-external-link-alt"></i></a> -->
-                        </div>
-                    </div>
-
-                    <div class="link-btn">
-                        <p class="project-name">Validation Form</p>
-                        <!-- <a href="https://github.com/hanishtharwani123/Validation-Form"><button class="btn-git">Source
-                                Code</button></a> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!------------ Certifications Section ------------->
-
-    <div id="certifications">
-
-        <div class="cert-box">
-
-            <p class="cert-title">Certifications</p>
-
-            <div class="cert-grid">
-
-                <!-- Certificate 1 -->
-
-                <div class="cert-card">
-
-                    <h3 class="cert-name">Oracle AI Foundations Associate</h3>
-
-                    <p class="cert-org">Oracle</p>
-
-                    <p class="cert-date">September 2025</p>
-
-                    <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=479C80599890908C5229ED3081E9C0B157F45ED905F3BF58FD0B07446BFD9BA6" class="cert-btn" target="_blank">View Certificate</a>
-
-                </div>
-
-
-                <!-- Certificate 2 -->
-
-                <div class="cert-card">
-
-                    <h3 class="cert-name">Social Networks</h3>
-
-                    <p class="cert-org">NPTEL</p>
-
-                    <p class="cert-date">May 2025</p>
-
-                    <a href="https://archive.nptel.ac.in/content/noc/NOC25/SEM1/Ecertificates/106/noc25-cs65/Course/NPTEL25CS65S14750135904303813.pdf" class="cert-btn" target="_blank">View Certificate</a>
-
-                </div>
-
-
-                <!-- Certificate 3 -->
-
-                <div class="cert-card">
-
-                    <h3 class="cert-name">Discrete Mathematics</h3>
-
-                    <p class="cert-org">NPTEL</p>
-
-                    <p class="cert-date">May 2025</p>
-
-                    <a href="https://archive.nptel.ac.in/content/noc/NOC25/SEM1/Ecertificates/106/noc25-cs26/Course/NPTEL25CS26S44750100404303813.pdf" class="cert-btn" target="_blank">View Certificate</a>
-
                 </div>
 
             </div>
-
         </div>
-
-    </div>
-
-    <!-- ---------- Github Section ------------->
-
-    <section id="github">
-
-        <h1 class="github-title">GitHub Statistics</h1>
-
-        <div class="github-container">
-
-            <div class="github-card">
-                <img
-                    src="https://github-readme-stats.vercel.app/api?username=anoop-grover&show_icons=true&theme=tokyonight&hide_border=true">
-            </div>
-
-            <div class="github-card">
-                <img
-                    src="https://github-readme-stats.vercel.app/api/top-langs/?username=anoop-grover&layout=compact&theme=tokyonight&hide_border=true">
-            </div>
-
-        </div>
-
-        <div class="github-graph">
-            <img
-                src="https://github-readme-activity-graph.vercel.app/graph?username=anoop-grover&theme=react-dark&hide_border=true">
-        </div>
-
-        <div class="github-streak">
-            <img
-                src="https://github-readme-streak-stats.herokuapp.com/?user=anoop-grover&theme=tokyonight&hide_border=true">
-        </div>
-
     </section>
 
-
-    <!-- ---------- Contact Section ------------->
-
-    <div id="contact-us">
-        <div class="cen">
-            <div class="us">
-                <h1 class="send">SEND ME MESSAGE</h1>
+    <!-- ---------- About Section ---------- -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">A brief overview of who I am, where I am based, and what drives my passion.</p>
             </div>
-            <form action="https://formsubmit.co/iamgroveranoop.1979@gmail.com" method="POST">
-                <div>
-                    <input type="text" name="name" placeholder="Your Name" id="name">
+            
+            <div class="about-bento">
+                <div class="bento-card about-main-card reveal">
+                    <p>
+                        Hello! My name is <strong>Anoop Grover</strong>. I am a B.Tech Computer Science student at <strong>Lovely Professional University (LPU)</strong>, originally from <strong>Khatima, Uttarakhand</strong>. I specialize in bridging the gap between product management, database administration, and software engineering.
+                    </p>
+                    <p>
+                        My focus is on **Technical Product Management and Data Operations**. I combine hands-on experience in building collaborative products (React, Node, WebSockets, Docker) with structured database operations in MySQL (data cleaning, extraction, and reporting on large datasets).
+                    </p>
+                    <p>
+                        Through my work as a Database & Data Operations Intern, I have successfully imported, cleaned, and managed **30,000+ alumni records**, creating scalable reporting pipelines and resolving duplication issues. In addition, I have solved **450+ coding problems** across LeetCode, GFG, CodeChef, and CodeForces, placing in the **top 20% globally** on LeetCode.
+                    </p>
+                    <div class="tag-list">
+                        <span class="tag-pill">Technical Product Manager</span>
+                        <span class="tag-pill">Database Operations</span>
+                        <span class="tag-pill">SQL Data Analyst</span>
+                        <span class="tag-pill">Agile Methodologies</span>
+                        <span class="tag-pill">MERN Stack & WebSockets</span>
+                    </div>
                 </div>
-                <div>
-                    <input type="email" name="email" placeholder="Your Email " id="email">
+
+                <div class="bento-card map-card reveal">
+                    <div class="map-placeholder">
+                        <div class="map-ping"></div>
+                        <i class="fas fa-map-marked-alt" style="font-size: 32px; opacity: 0.15;"></i>
+                    </div>
+                    <div class="location-info">
+                        <div class="location-city">Khatima, Uttarakhand</div>
+                        <div class="location-country">India (Home Base)</div>
+                    </div>
                 </div>
-                <div>
-                    <textarea name="Message" id="message" rows="6" placeholder="Enter Your Message"></textarea>
-                </div>
-                <button class="leave">SEND</button>
-            </form>
+            </div>
         </div>
+    </section>
 
-        <div class="map">
-            <img class="message-man"
-                src="images/hanish_image_of_one_men_sending_a_message_from_mobile_message_i_9ee4ef7e-eda5-4abf-8129-45fb365675f8.png"
-                alt="">
+    <!-- ---------- Experience Section ---------- -->
+    <section id="experience" style="padding: 80px 0; border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Professional Experience</h2>
+                <p class="section-subtitle">Real-world experience managing database infrastructure and reporting systems.</p>
+            </div>
+            
+            <div class="bento-card reveal" style="max-width: 900px; margin: 0 auto; background: var(--card-gradient);">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 16px;">
+                    <div>
+                        <h3 style="font-size: 22px; font-weight: 800; color: var(--text-primary);">Database & Data Operations Intern</h3>
+                        <div style="font-size: 16px; font-weight: 600; color: var(--accent-secondary); margin-top: 4px;">Lovely Professional University (LPU)</div>
+                    </div>
+                    <div style="text-align: right; min-width: 150px;">
+                        <span class="port-badge" style="margin-bottom: 8px;">Part-Time</span>
+                        <div style="font-size: 14px; color: var(--text-secondary); font-family: var(--font-mono);">Nov 2025 - Apr 2026</div>
+                    </div>
+                </div>
+                
+                <ul style="color: var(--text-secondary); font-size: 15px; padding-left: 20px; display: flex; flex-direction: column; gap: 14px;">
+                    <li>
+                        <strong>Data Migration & Import</strong>: Imported and managed over <strong>30,000+ alumni records</strong> from Excel spreadsheets into MySQL, building a centralized, clean database framework for organizational outreach and analysis.
+                    </li>
+                    <li>
+                        <strong>Data Integrity & Cleaning</strong>: Engineered structured SQL queries to clean, update, and validate records, successfully identifying and resolving duplicate entries while keeping database consistency in line with reporting requirements.
+                    </li>
+                    <li>
+                        <strong>Targeted Reporting</strong>: Formulated customized, department-wise, and parameter-based reporting pipelines by sorting and querying alumni metrics to support administrative initiatives.
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <!-- ---------- Footer Section ------------->
+    <!-- ---------- Milestones Timeline Section ---------- -->
+    <section id="timeline-section" style="padding: 60px 0; border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">My Journey & Milestones</h2>
+                <p class="section-subtitle">Chronological milestones of my academic path and engineering achievements.</p>
+            </div>
+            
+            <div class="timeline-container">
+                <div class="timeline-track"></div>
+                
+                <!-- Milestone 1 -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content bento-card">
+                        <div class="timeline-date">2019 - 2021</div>
+                        <h3 class="timeline-title">High School Matriculation</h3>
+                        <p class="timeline-desc">Completed High School education at Nosegay Public School, Khatima, Uttarakhand, securing a score of <strong>96.4%</strong>.</p>
+                    </div>
+                </div>
 
-    <div id="footer">
-        <div class="foot">Anoop Grover</div>
-        <p class="copy">Copyright &copy; 2026. All Rights Reserved.</p>
-    </div>
+                <!-- Milestone 2 -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content bento-card">
+                        <div class="timeline-date">2021 - 2023</div>
+                        <h3 class="timeline-title">Intermediate (PCM)</h3>
+                        <p class="timeline-desc">Completed Intermediate secondary education (Physics, Chemistry, Math) at Nosegay Public School, Khatima, Uttarakhand, graduating with <strong>90.6%</strong>.</p>
+                    </div>
+                </div>
 
+                <!-- Milestone 3 -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content bento-card">
+                        <div class="timeline-date">Aug 2023 - Present</div>
+                        <h3 class="timeline-title">B.Tech in Computer Science</h3>
+                        <p class="timeline-desc">Enrolled at Lovely Professional University (LPU), Punjab, to pursue a B.Tech in CSE. Currently holding a cumulative <strong>CGPA of 7.53</strong>.</p>
+                    </div>
+                </div>
 
+                <!-- Milestone 4 -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content bento-card">
+                        <div class="timeline-date">Dec 2024</div>
+                        <h3 class="timeline-title">AI Personalized Learning Platform</h3>
+                        <p class="timeline-desc">Developed and launched a MERN-based platform generating custom study pathways using recommendation systems and backend REST APIs.</p>
+                    </div>
+                </div>
+
+                <!-- Milestone 5 -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content bento-card">
+                        <div class="timeline-date">May 2025</div>
+                        <h3 class="timeline-title">NPTEL Certifications</h3>
+                        <p class="timeline-desc">Successfully completed IIT NPTEL certifications in <strong>Discrete Mathematics</strong> and <strong>Social Networks</strong>.</p>
+                    </div>
+                </div>
+
+                <!-- Milestone 6 -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content bento-card">
+                        <div class="timeline-date">Sept - Oct 2025</div>
+                        <h3 class="timeline-title">Oracle AI & Co-Lab IDE</h3>
+                        <p class="timeline-desc">Earned the <strong>Oracle AI Foundations Associate</strong> credential. Created <strong>Co-Lab IDE</strong>, a real-time collaborative compiler integrating Docker, Redis, and BullMQ.</p>
+                    </div>
+                </div>
+
+                <!-- Milestone 7 -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content bento-card">
+                        <div class="timeline-date">Nov 2025 - Apr 2026</div>
+                        <h3 class="timeline-title">Database Intern at LPU</h3>
+                        <p class="timeline-desc">Worked as a Database & Data Operations Intern, migrating and managing 30k+ alumni records in MySQL database frameworks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ---------- Skills Section ---------- -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Skills & Tech Stack</h2>
+                <p class="section-subtitle">The tools, languages, and frameworks I use to bring ideas to life.</p>
+            </div>
+
+            <div class="skills-bento">
+                <!-- Product & Data Strategy -->
+                <div class="bento-card reveal">
+                    <div class="skill-box-title">Product & Data Strategy</div>
+                    <div class="skills-list-grid">
+                        <div class="skill-item">
+                            <i class="fas fa-tasks" style="font-size: 32px; color: var(--accent-primary); margin-bottom: 10px;"></i>
+                            <span>Product Mgmt</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-search-dollar" style="font-size: 32px; color: var(--accent-primary); margin-bottom: 10px;"></i>
+                            <span>Market Research</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-chart-bar" style="font-size: 32px; color: var(--accent-primary); margin-bottom: 10px;"></i>
+                            <span>Data Analysis</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database" style="font-size: 32px; color: var(--accent-primary); margin-bottom: 10px;"></i>
+                            <span>SQL & Mining</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-users-cog" style="font-size: 32px; color: var(--accent-primary); margin-bottom: 10px;"></i>
+                            <span>Agile & Scrum</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-network-wired" style="font-size: 32px; color: var(--accent-primary); margin-bottom: 10px;"></i>
+                            <span>API Integration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Systems, Languages & Automation -->
+                <div class="bento-card reveal">
+                    <div class="skill-box-title">Systems & Automation</div>
+                    <div class="skills-list-grid">
+                        <div class="skill-item">
+                            <img src="images/javascript.png" alt="JavaScript">
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="images/python.png" alt="Python">
+                            <span>Python Scripting</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="images/cpp.png" alt="C++">
+                            <span>C++</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="images/java.png" alt="Java">
+                            <span>Java</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="images/mysql.png" alt="MySQL">
+                            <span>MySQL Database</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="images/docker.png" alt="Docker">
+                            <span>Docker & Redis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ---------- Projects Section ---------- -->
+    <section id="project">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">A collection of custom applications I have designed and engineered.</p>
+            </div>
+
+            <div class="projects-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 1000px; margin: 0 auto; gap: 32px;">
+                
+                <!-- Project 1: Co-Lab IDE -->
+                <div class="project-card reveal">
+                    <div class="project-header-box">
+                        <div class="project-icon-wrapper"><i class="fas fa-terminal"></i></div>
+                        <div class="project-badge">Featured Product</div>
+                        <h3 class="project-title">Co-Lab IDE</h3>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-desc">
+                            A collaborative online code editor supporting real-time multi-user editing and multi-language compilation. Integrated Docker containers, Redis buffers, and BullMQ to run code execution asynchronously.
+                        </p>
+                        <div class="project-tech-tags">
+                            <span>WebSockets</span>
+                            <span>Docker</span>
+                            <span>Redis</span>
+                            <span>BullMQ</span>
+                            <span>Node.js</span>
+                            <span>React.js</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/anoop-grover/collaborative-cloud-ide" class="project-btn primary" target="_blank">View Code</a>
+                            <a href="#" class="project-btn secondary">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: AI Personalized Learning Platform -->
+                <div class="project-card reveal">
+                    <div class="project-header-box">
+                        <div class="project-icon-wrapper"><i class="fas fa-brain"></i></div>
+                        <div class="project-badge">AI Platform</div>
+                        <h3 class="project-title">AI Learning Platform</h3>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-desc">
+                            A web platform that generates personalized learning roadmaps utilizing user interests, skill levels, and available study hours. Deployed React frontends and Node.js REST API services to track user learning progress.
+                        </p>
+                        <div class="project-tech-tags">
+                            <span>AI Recommendations</span>
+                            <span>REST APIs</span>
+                            <span>React.js</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/anoop-grover/ai-learning-platform" class="project-btn primary" target="_blank">View Code</a>
+                            <a href="#" class="project-btn secondary">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ---------- Dynamic GitHub Projects Section ---------- -->
+    <section id="github-repos-section" style="padding: 80px 0; border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Active GitHub Repositories</h2>
+                <p class="section-subtitle">Real-time public repositories loaded directly from GitHub API.</p>
+            </div>
+            
+            <!-- Repository target grid loader -->
+            <div id="githubReposLoader" class="reveal" style="text-align: center; color: var(--text-secondary); padding: 40px 0;">
+                <i class="fas fa-spinner fa-spin" style="font-size: 32px; color: var(--accent-primary); margin-bottom: 12px;"></i>
+                <p>Fetching active repositories...</p>
+            </div>
+            
+            <div class="github-repos-grid" id="githubReposGrid" style="display: none;">
+                <!-- Dynamically populated in script.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ---------- Certifications Section ---------- -->
+    <section id="certifications">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Certifications</h2>
+                <p class="section-subtitle">Validations of my specialized knowledge and technical training.</p>
+            </div>
+
+            <div class="cert-grid">
+                <!-- Certificate 1 -->
+                <div class="cert-card reveal">
+                    <div>
+                        <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                        <h3 class="cert-name">Oracle AI Foundations</h3>
+                        <p class="cert-org">Oracle Corporation</p>
+                        <p class="cert-date">Issued: Sept 2025</p>
+                    </div>
+                    <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=479C80599890908C5229ED3081E9C0B157F45ED905F3BF58FD0B07446BFD9BA6" class="cert-btn" target="_blank">Verify Credentials</a>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="cert-card reveal">
+                    <div>
+                        <div class="cert-icon"><i class="fas fa-network-wired"></i></div>
+                        <h3 class="cert-name">Social Networks</h3>
+                        <p class="cert-org">NPTEL (IIT Madras)</p>
+                        <p class="cert-date">Issued: May 2025</p>
+                    </div>
+                    <a href="https://archive.nptel.ac.in/content/noc/NOC25/SEM1/Ecertificates/106/noc25-cs65/Course/NPTEL25CS65S14750135904303813.pdf" class="cert-btn" target="_blank">Verify Credentials</a>
+                </div>
+
+                <!-- Certificate 3 -->
+                <div class="cert-card reveal">
+                    <div>
+                        <div class="cert-icon"><i class="fas fa-calculator"></i></div>
+                        <h3 class="cert-name">Discrete Mathematics</h3>
+                        <p class="cert-org">NPTEL (IIT Kharagpur)</p>
+                        <p class="cert-date">Issued: May 2025</p>
+                    </div>
+                    <a href="https://archive.nptel.ac.in/content/noc/NOC25/SEM1/Ecertificates/106/noc25-cs26/Course/NPTEL25CS26S44750100404303813.pdf" class="cert-btn" target="_blank">Verify Credentials</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ---------- GitHub Section ---------- -->
+    <section id="github">
+        <div class="container">
+            <h2 class="github-title reveal">GitHub Contribution & Analytics</h2>
+            
+            <div class="github-container">
+                <div class="github-card reveal">
+                    <img src="https://github-readme-stats.vercel.app/api?username=anoop-grover&show_icons=true&theme=tokyonight&hide_border=true" alt="GitHub Stats">
+                </div>
+                <div class="github-card reveal">
+                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=anoop-grover&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages">
+                </div>
+            </div>
+
+            <div class="github-graph reveal">
+                <img src="https://github-readme-activity-graph.vercel.app/graph?username=anoop-grover&theme=react-dark&hide_border=true" alt="Contribution Graph">
+            </div>
+
+            <div class="github-streak reveal">
+                <img src="https://github-readme-streak-stats.herokuapp.com/?user=anoop-grover&theme=tokyonight&hide_border=true" alt="GitHub Streak">
+            </div>
+        </div>
+    </section>
+
+    <!-- ---------- Contact Section ---------- -->
+    <section id="contact-us">
+        <div class="container">
+            <div class="contact-layout">
+                
+                <div class="contact-info-panel reveal">
+                    <div class="contact-heading">
+                        <h2>Let's Collaborate</h2>
+                        <p>Have an interesting project, job opportunity, or just want to chat about web development? Send me a message, and I'll get back to you within 24 hours.</p>
+                    </div>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <div class="contact-text-label">Email Me</div>
+                                <div class="contact-text-val">anoop.grover23@lpu.in</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <div>
+                                <div class="contact-text-label">Call Me</div>
+                                <div class="contact-text-val">+91 76687 99787</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <div class="contact-text-label">Location Base</div>
+                                <div class="contact-text-val">Khatima, Uttarakhand, India</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-panel reveal">
+                    <form action="https://formsubmit.co/anoop.grover23@lpu.in" method="POST">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" name="name" id="name" class="form-input" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" name="email" id="email" class="form-input" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea name="Message" id="message" class="form-textarea" placeholder="Hello Anoop, I would love to talk about..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-send">Send Message</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ---------- Footer Section ---------- -->
+    <footer id="footer">
+        <div class="container footer-container">
+            <div class="footer-logo">Anoop Grover</div>
+            <div class="footer-copy">&copy; 2026 Anoop Grover. All Rights Reserved.</div>
+        </div>
+    </footer>
+
+    <!-- ---------- Scripts ---------- -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="script.js"></script>
     <script>
+        // Init Typing Animation
         var typed = new Typed(".auto-typed", {
-            strings: ["Full Stack Web Developer"],
-            typeSpeed: 150,
-            backSpeed: 150,
+            strings: ["Technical Product Engineer", "Full Stack Developer", "Data & Operations Builder"],
+            typeSpeed: 80,
+            backSpeed: 60,
             loop: true
-        })
+        });
 
+        // Theme Toggle Logic with LocalStorage
         let icon = document.getElementById("icon");
+        
+        // Load saved theme
+        const savedTheme = localStorage.getItem("portfolio-theme");
+        if (savedTheme === "light") {
+            document.body.classList.add("white-theme");
+            icon.src = 'images/moon.png';
+        } else {
+            document.body.classList.remove("white-theme");
+            icon.src = 'images/sun.png';
+        }
+        
         icon.addEventListener('click', () => {
-            let white = document.body.classList.toggle('white-theme');
+            document.body.classList.toggle('white-theme');
             if (document.body.classList.contains('white-theme')) {
                 icon.src = 'images/moon.png';
+                localStorage.setItem("portfolio-theme", "light");
             } else {
                 icon.src = 'images/sun.png';
+                localStorage.setItem("portfolio-theme", "dark");
             }
-        })
+        });
     </script>
 </body>
 
