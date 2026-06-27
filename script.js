@@ -46,7 +46,7 @@ const botResponses = {
 
     education: `Anoop is currently pursuing a <strong>B.Tech in Computer Science and Engineering</strong> at <strong>Lovely Professional University (LPU)</strong> in Jalandhar, Punjab, India (Current CGPA: 7.53). He originally completed his schooling at Nosegay Public School in Khatima, Uttarakhand.`,
 
-    contact: `You can reach out to Anoop through the following platforms:
+    contact: `Anoop is currently <strong>available for freelance work</strong>, custom scripts development, and technical consulting! You can reach out directly via:
     <br><br>
     • <strong>Email</strong>: <a href="mailto:anoop.grover23@lpu.in" style="color: var(--accent-primary);">anoop.grover23@lpu.in</a>
     <br>
@@ -58,7 +58,7 @@ const botResponses = {
     <br>
     • <strong>Twitter/X</strong>: <a href="https://x.com/anoopgroverrr" target="_blank" style="color: var(--accent-primary);">x.com/anoopgroverrr</a>
     <br><br>
-    Feel free to use the contact form at the bottom of this page to send him a direct message!`,
+    Feel free to use the contact form at the bottom of this page to drop him a message about your project requirements!`,
 
     default: `I'm not sure about that one! I can tell you all about Anoop's skills, projects, certifications, education, and contact details. Try using the quick action buttons or ask:
     <br><br>
@@ -511,14 +511,14 @@ function renderFallbackRepos() {
     
     const fallbacks = [
         {
-            name: "collaborative-cloud-ide",
+            name: "Co-Lab-IDE---Distributed-Cloud-Native-Code-Engine",
             description: "A collaborative online code editor supporting real-time code sharing and multi-language compilation with Docker, Redis, and BullMQ.",
             language: "JavaScript",
             stars: 12,
             forks: 3
         },
         {
-            name: "ai-learning-platform",
+            name: "PersonalizedLearningPlatform",
             description: "A web platform that generates personalized learning roadmaps based on user interests, skill levels, and available study hours.",
             language: "JavaScript",
             stars: 8,

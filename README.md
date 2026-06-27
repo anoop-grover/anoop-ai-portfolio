@@ -8,6 +8,9 @@ Welcome to my personal developer portfolio, re-engineered from the ground up as 
 
 👉 **[Live Demo Website](https://anoop-grover.github.io/anoop-ai-portfolio/)**
 
+> [!NOTE]
+> 💼 **Available for Freelance Contracts & Technical Consulting**: I specialize in building custom automation scripts (Python, Google Apps Script), full-stack MERN/WebSocket engines, and MySQL database administration tasks. Let's collaborate on your next project!
+
 ---
 
 ## ⚡ Key Interactive & AI Features
@@ -54,10 +57,10 @@ Welcome to my personal developer portfolio, re-engineered from the ground up as 
 
 ## 🚀 Projects Showcased
 
-1. **Co-Lab IDE (Collaborative Code Editor)**
+1. **[Co-Lab IDE (Collaborative Code Editor)](https://github.com/anoop-grover/Co-Lab-IDE---Distributed-Cloud-Native-Code-Engine)** — **[Live Demo](https://co-lab-ide-distributed-cloud-native.vercel.app/)**
    - Real-time collaborative code compilation platform.
    - Built with WebSockets, React frontend, Node backend, Docker compiling environments, Redis buffers, and BullMQ background task runners.
-2. **AI Personalized Learning Platform**
+2. **[AI Personalized Learning Platform](https://github.com/anoop-grover/PersonalizedLearningPlatform)**
    - Web application providing tailored curriculum roadmaps using AI models.
    - Employs React, Node, and REST API services.
 
