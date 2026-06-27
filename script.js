@@ -102,6 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initNeuralNetwork();
     initVolumeState();
     updateDiagStatus("Idle");
+    initStatsTiltEffect();
 });
 
 function saveChatHistory() {
@@ -728,6 +729,7 @@ function animateNeuralCanvas() {
 let recognition = null;
 let isRecording = false;
 let isMuted = localStorage.getItem("chat-tts-muted") === "true";
+let hasSubmittedVoiceQuery = false;
 
 function initSpeechRecognition() {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -743,6 +745,7 @@ function initSpeechRecognition() {
     
     rec.onstart = () => {
         isRecording = true;
+        hasSubmittedVoiceQuery = false; // Reset debounce flag on start
         const micBtn = document.getElementById("chatMicBtn");
         if (micBtn) micBtn.classList.add("recording");
         updateDiagStatus("Listening...");
@@ -764,11 +767,22 @@ function initSpeechRecognition() {
     };
     
     rec.onresult = (event) => {
-        const transcript = event.results[0][0].transcript;
-        const chatInput = document.getElementById("chatInput");
-        if (chatInput) {
-            chatInput.value = transcript;
-            sendMessage();
+        const resultIndex = event.resultIndex;
+        const result = event.results[resultIndex];
+        
+        // Check if result is final and query hasn't been submitted in this session
+        if (result.isFinal && !hasSubmittedVoiceQuery) {
+            const transcript = result[0].transcript.trim();
+            if (transcript) {
+                hasSubmittedVoiceQuery = true;
+                const chatInput = document.getElementById("chatInput");
+                if (chatInput) {
+                    chatInput.value = transcript;
+                    sendMessage();
+                }
+                // Explicitly stop recognition to close the microphone session cleanly
+                rec.stop();
+            }
         }
     };
     
@@ -920,4 +934,184 @@ function analyzeQueryDiagnostics(query) {
     const latency = Math.floor(Math.random() * 250) + 120; // 120ms - 370ms
     const diagLatency = document.getElementById("diagLatency");
     if (diagLatency) diagLatency.textContent = latency + "ms";
+}
+
+// =============================================================
+// HOLOGRAPHIC STATS DASHBOARD (TAB SWITCHING & 3D TILT)
+// =============================================================
+function switchStatsTab(tabName) {
+    // 1. Update button active classes
+    const buttons = document.querySelectorAll(".stats-tab-btn");
+    buttons.forEach(btn => {
+        if (btn.getAttribute("onclick").includes(tabName)) {
+            btn.classList.add("active");
+        } else {
+            btn.classList.remove("active");
+        }
+    });
+    
+    // 2. Toggle view visibility
+    const leetcodeView = document.getElementById("leetcodeStatsView");
+    const githubView = document.getElementById("githubStatsView");
+    
+    if (tabName === "leetcode") {
+        leetcodeView.classList.add("active");
+        githubView.classList.remove("active");
+    } else {
+        leetcodeView.classList.remove("active");
+        githubView.classList.add("active");
+        // Draw the radar chart dynamically
+        renderLanguageRadarChart();
+    }
+}
+
+function initStatsTiltEffect() {
+    const card = document.getElementById("statsCard");
+    if (!card) return;
+    
+    card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        // Mouse coordinates relative to card
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        // Calculate offsets relative to center (-0.5 to 0.5)
+        const xOffset = (x / rect.width) - 0.5;
+        const yOffset = (y / rect.height) - 0.5;
+        
+        // Max tilt angle (degrees)
+        const maxTilt = 12;
+        
+        // Apply tilt
+        const rotateX = -yOffset * maxTilt; // vertical tilt
+        const rotateY = xOffset * maxTilt;  // horizontal tilt
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+        card.style.boxShadow = "0 15px 30px rgba(0, 0, 0, 0.2), 0 0 35px rgba(99, 102, 241, 0.15)";
+    });
+    
+    card.addEventListener("mouseleave", () => {
+        // Reset tilt and restore default transitions
+        card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)";
+        card.style.boxShadow = "var(--shadow-md)";
+    });
+}
+
+// =============================================================
+// DYNAMIC SVG LANGUAGE RADAR CHART
+// =============================================================
+const radarSkills = [
+    { label: "SQL / DB", value: 0.90, desc: "MySQL database operations & management" },
+    { label: "Python", value: 0.85, desc: "Automation scripts, file parsing & modeling" },
+    { label: "JS / React", value: 0.80, desc: "MERN Stack development (Co-Lab IDE)" },
+    { label: "Java", value: 0.70, desc: "OOP principles, REST APIs & data structures" },
+    { label: "C++ / DSA", value: 0.75, desc: "450+ solved problems, LeetCode rating 1615" }
+];
+
+function renderLanguageRadarChart() {
+    const svg = document.getElementById("githubRadarChart");
+    if (!svg) return;
+    
+    // Clear existing contents
+    svg.innerHTML = "";
+    
+    const cx = 110;
+    const cy = 110;
+    const r = 70; // max radius
+    const totalAxes = radarSkills.length;
+    
+    // 1. Draw concentric grid polygons (25%, 50%, 75%, 100%)
+    const levels = 4;
+    for (let level = 1; level <= levels; level++) {
+        const levelRadius = (r / levels) * level;
+        let points = [];
+        for (let i = 0; i < totalAxes; i++) {
+            const angle = (i * 2 * Math.PI / totalAxes) - (Math.PI / 2);
+            const x = cx + levelRadius * Math.cos(angle);
+            const y = cy + levelRadius * Math.sin(angle);
+            points.push(`${x},${y}`);
+        }
+        
+        const polygon = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+        polygon.setAttribute("points", points.join(" "));
+        polygon.setAttribute("class", "radar-grid");
+        svg.appendChild(polygon);
+    }
+    
+    // 2. Draw axis lines and labels
+    for (let i = 0; i < totalAxes; i++) {
+        const angle = (i * 2 * Math.PI / totalAxes) - (Math.PI / 2);
+        
+        // Axis line
+        const x = cx + r * Math.cos(angle);
+        const y = cy + r * Math.sin(angle);
+        
+        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        line.setAttribute("x1", cx);
+        line.setAttribute("y1", cy);
+        line.setAttribute("x2", x);
+        line.setAttribute("y2", y);
+        line.setAttribute("class", "radar-axis");
+        svg.appendChild(line);
+        
+        // Label position
+        const labelR = r + 15;
+        const lx = cx + labelR * Math.cos(angle);
+        const ly = cy + labelR * Math.sin(angle) + 3;
+        
+        const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        text.setAttribute("x", lx);
+        text.setAttribute("y", ly);
+        text.setAttribute("class", "radar-label");
+        text.textContent = radarSkills[i].label;
+        svg.appendChild(text);
+    }
+    
+    // 3. Draw active skill polygon
+    let skillPoints = [];
+    radarSkills.forEach((skill, i) => {
+        const angle = (i * 2 * Math.PI / totalAxes) - (Math.PI / 2);
+        const skillRadius = r * skill.value;
+        const x = cx + skillRadius * Math.cos(angle);
+        const y = cy + skillRadius * Math.sin(angle);
+        skillPoints.push(`${x},${y}`);
+    });
+    
+    const skillPolygon = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+    skillPolygon.setAttribute("points", skillPoints.join(" "));
+    skillPolygon.setAttribute("class", "radar-area");
+    svg.appendChild(skillPolygon);
+    
+    // 4. Draw interactive node dots
+    radarSkills.forEach((skill, i) => {
+        const angle = (i * 2 * Math.PI / totalAxes) - (Math.PI / 2);
+        const skillRadius = r * skill.value;
+        const x = cx + skillRadius * Math.cos(angle);
+        const y = cy + skillRadius * Math.sin(angle);
+        
+        const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        circle.setAttribute("cx", x);
+        circle.setAttribute("cy", y);
+        circle.setAttribute("r", "3.5");
+        circle.setAttribute("class", "radar-dot");
+        
+        // Tooltip hover actions
+        circle.addEventListener("mouseenter", () => {
+            const tooltip = document.getElementById("radarTooltip");
+            if (tooltip) {
+                tooltip.textContent = `${skill.label}: ${Math.round(skill.value * 100)}% - ${skill.desc}`;
+                tooltip.style.opacity = "1";
+            }
+        });
+        
+        circle.addEventListener("mouseleave", () => {
+            const tooltip = document.getElementById("radarTooltip");
+            if (tooltip) {
+                tooltip.style.opacity = "0.9";
+                tooltip.textContent = "Hover vertex for stats";
+            }
+        });
+        
+        svg.appendChild(circle);
+    });
 }

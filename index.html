@@ -55,7 +55,7 @@
             <div class="bento-grid">
                 
                 <!-- Card 1: Intro / Bio -->
-                <div class="bento-card col-span-2 intro-card reveal">
+                <div class="col-span-2 bento-card intro-card reveal">
                     <div class="port-badge">Digital Portfolio</div>
                     <p class="text-welcome">Hi, welcome to my space</p>
                     <h1 class="text-name">I'm <span>Anoop Grover</span></h1>
@@ -79,7 +79,7 @@
                 </div>
 
                 <!-- Card 3: Interactive AI Assistant / Terminal Card -->
-                <div class="bento-card col-span-2 ai-card reveal" id="chatCard">
+                <div class="col-span-2 bento-card ai-card reveal" id="chatCard">
                     <!-- Chatbot Interface View -->
                     <div id="chatbotView" class="view-panel active">
                         <div class="ai-header">
@@ -138,12 +138,12 @@
                                 
                                 <div class="diag-item">
                                     <div class="diag-label">Model Engine:</div>
-                                    <div class="diag-value font-mono">Gemini-3.5-Flash</div>
+                                    <div class="font-mono diag-value">Gemini-3.5-Flash</div>
                                 </div>
                                 
                                 <div class="diag-item">
                                     <div class="diag-label">Response Latency:</div>
-                                    <div class="diag-value font-mono" id="diagLatency">0ms</div>
+                                    <div class="font-mono diag-value" id="diagLatency">0ms</div>
                                 </div>
                                 
                                 <div class="diag-item">
@@ -181,60 +181,81 @@
                 </div>
 
                 <!-- Card 4: LeetCode / DSA Stats Dashboard -->
-                <div class="bento-card stats-card reveal">
-                    <div class="stats-title">
-                        <i class="fas fa-code"></i> DSA Problem Solving
+                <div class="bento-card stats-card reveal" id="statsCard">
+                    <div class="stats-card-header">
+                        <button class="stats-tab-btn active" onclick="switchStatsTab('leetcode')"><i class="fas fa-code"></i> LeetCode</button>
+                        <button class="stats-tab-btn" onclick="switchStatsTab('github')"><i class="fab fa-github"></i> GitHub Metrics</button>
                     </div>
                     
-                    <!-- Advanced SVG progress tracker grid -->
-                    <div class="dsa-svg-tracker">
-                        <div class="dsa-circle-item">
-                            <svg class="progress-ring" width="80" height="80">
-                                <circle class="progress-ring__background" stroke="var(--border-color)" stroke-width="6" fill="transparent" r="32" cx="40" cy="40"/>
-                                <circle class="progress-ring__circle easy" stroke="#10b981" stroke-width="6" fill="transparent" r="32" cx="40" cy="40"/>
-                            </svg>
-                            <div class="dsa-circle-text">
-                                <span class="dsa-circle-count easy-count">180</span>
-                                <span class="dsa-circle-label">Easy</span>
+                    <!-- LeetCode View -->
+                    <div id="leetcodeStatsView" class="stats-view active">
+                        <div class="dsa-svg-tracker">
+                            <div class="dsa-circle-item">
+                                <svg class="progress-ring" width="80" height="80">
+                                    <circle class="progress-ring__background" stroke="var(--border-color)" stroke-width="6" fill="transparent" r="32" cx="40" cy="40"/>
+                                    <circle class="progress-ring__circle easy" stroke="#10b981" stroke-width="6" fill="transparent" r="32" cx="40" cy="40"/>
+                                </svg>
+                                <div class="dsa-circle-text">
+                                    <span class="dsa-circle-count easy-count">0</span>
+                                    <span class="dsa-circle-label">Easy</span>
+                                </div>
+                            </div>
+
+                            <div class="dsa-circle-item">
+                                <svg class="progress-ring" width="80" height="80">
+                                    <circle class="progress-ring__background" stroke="var(--border-color)" stroke-width="6" fill="transparent" r="32" cx="40" cy="40"/>
+                                    <circle class="progress-ring__circle medium" stroke="#f59e0b" stroke-width="6" fill="transparent" r="32" cx="40" cy="40"/>
+                                </svg>
+                                <div class="dsa-circle-text">
+                                    <span class="dsa-circle-count medium-count">0</span>
+                                    <span class="dsa-circle-label">Medium</span>
+                                </div>
+                            </div>
+
+                            <div class="dsa-circle-item">
+                                <svg class="progress-ring" width="80" height="80">
+                                    <circle class="progress-ring__background" stroke="var(--border-color)" stroke-width="6" fill="transparent" r="32" cx="40" cy="40"/>
+                                    <circle class="progress-ring__circle hard" stroke="#ef4444" stroke-width="6" fill="transparent" r="32" cx="40" cy="40"/>
+                                </svg>
+                                <div class="dsa-circle-text">
+                                    <span class="dsa-circle-count hard-count">0</span>
+                                    <span class="dsa-circle-label">Hard</span>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="dsa-circle-item">
-                            <svg class="progress-ring" width="80" height="80">
-                                <circle class="progress-ring__background" stroke="var(--border-color)" stroke-width="6" fill="transparent" r="32" cx="40" cy="40"/>
-                                <circle class="progress-ring__circle medium" stroke="#f59e0b" stroke-width="6" fill="transparent" r="32" cx="40" cy="40"/>
-                            </svg>
-                            <div class="dsa-circle-text">
-                                <span class="dsa-circle-count medium-count">220</span>
-                                <span class="dsa-circle-label">Medium</span>
-                            </div>
+                        <div class="dsa-summary-bar">
+                            <div class="dsa-summary-label">Total Solved:</div>
+                            <div class="dsa-summary-val" id="totalSolvedCount">450+</div>
                         </div>
 
-                        <div class="dsa-circle-item">
-                            <svg class="progress-ring" width="80" height="80">
-                                <circle class="progress-ring__background" stroke="var(--border-color)" stroke-width="6" fill="transparent" r="32" cx="40" cy="40"/>
-                                <circle class="progress-ring__circle hard" stroke="#ef4444" stroke-width="6" fill="transparent" r="32" cx="40" cy="40"/>
-                            </svg>
-                            <div class="dsa-circle-text">
-                                <span class="dsa-circle-count hard-count">50</span>
-                                <span class="dsa-circle-label">Hard</span>
+                        <div class="stats-grid" style="margin-top: 10px;">
+                            <div class="stat-box" style="padding: 10px;">
+                                <div class="stat-number" id="leetcodeRatingVal">0</div>
+                                <div class="stat-label">Rating</div>
+                            </div>
+                            <div class="stat-box" style="padding: 10px;">
+                                <div class="stat-number">Top 20%</div>
+                                <div class="stat-label">Global Rank</div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="dsa-summary-bar">
-                        <div class="dsa-summary-label">Total Solved:</div>
-                        <div class="dsa-summary-val" id="totalSolvedCount">450+</div>
-                    </div>
-
-                    <div class="stats-grid" style="margin-top: 10px;">
-                        <div class="stat-box" style="padding: 10px;">
-                            <div class="stat-number" id="leetcodeRatingVal">1615</div>
-                            <div class="stat-label">LeetCode Rating</div>
+                    <!-- GitHub Languages View -->
+                    <div id="githubStatsView" class="stats-view">
+                        <div class="radar-container">
+                            <svg id="githubRadarChart" viewBox="0 0 220 220" width="100%" height="160"></svg>
+                            <div class="radar-tooltip" id="radarTooltip">Hover vertex for stats</div>
                         </div>
-                        <div class="stat-box" style="padding: 10px;">
-                            <div class="stat-number">Top 20%</div>
-                            <div class="stat-label">LeetCode Global</div>
+                        <div class="stats-grid" style="margin-top: 10px;">
+                            <div class="stat-box" style="padding: 8px;">
+                                <div class="stat-number">10+</div>
+                                <div class="stat-label">Public Repos</div>
+                            </div>
+                            <div class="stat-box" style="padding: 8px;">
+                                <div class="stat-number">SQL/MERN</div>
+                                <div class="stat-label">Core Focus</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -508,7 +529,7 @@
                             <span>React.js</span>
                         </div>
                         <div class="project-actions">
-                            <a href="https://github.com/anoop-grover/collaborative-cloud-ide" class="project-btn primary" target="_blank">View Code</a>
+                            <a href="https://github.com/anoop-grover/Co-Lab-IDE---Distributed-Cloud-Native-Code-Engine" class="project-btn primary" target="_blank">View Code</a>
                             <a href="#" class="project-btn secondary">Live Demo</a>
                         </div>
                     </div>
@@ -533,7 +554,7 @@
                             <span>MongoDB</span>
                         </div>
                         <div class="project-actions">
-                            <a href="https://github.com/anoop-grover/ai-learning-platform" class="project-btn primary" target="_blank">View Code</a>
+                            <a href="https://github.com/anoop-grover/PersonalizedLearningPlatform" class="project-btn primary" target="_blank">View Code</a>
                             <a href="#" class="project-btn secondary">Live Demo</a>
                         </div>
                     </div>
